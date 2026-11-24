@@ -1,0 +1,84 @@
+<footer class="vanyora-footer">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Brand & Social Media -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-brand mb-3">
+                    <span class="brand-main">Vanyora</span>
+                    <span class="brand-sub">Naturals</span>
+                </div>
+                <p class="footer-tagline">
+                    Nature in Every Nourishment. Bringing plant-based nutrition, superfoods, and herbal wellness into
+                    everyday life.
+                </p>
+
+                <!-- Social Media Icons -->
+                <div class="social-links d-flex gap-2 mt-3">
+                    @for (social of socialLinks; track social.name) {
+                    <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="social-icon"
+                        [attr.aria-label]="social.name">
+                        <i [class]="social.iconClass"></i>
+                    </a>
+                    }
+                </div>
+            </div>
+
+            <!-- Product Links -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <h5 class="footer-heading">Products</h5>
+                <ul class="footer-links list-unstyled">
+                    @for (item of productLinks; track item.path) {
+                    <li>
+                        <a [routerLink]="item.path">{{ item.label }}</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="footer-links list-unstyled">
+                    @for (item of quickLinks; track item.path) {
+                    <li>
+                        <a [routerLink]="item.path">{{ item.label }}</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="footer-heading">Contact Us</h5>
+                <ul class="contact-list list-unstyled">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Mysore, Karnataka, India</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+910000000000">+91 00000 00000</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:care@vanyoranaturals.com">care&#64;vanyoranaturals.com</a>
+                    </li>
+                </ul>
+                <a routerLink="/contact-us" class="btn contact-btn mt-2">
+                    Get in Touch
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom mt-5">
+        <div class="container text-center">
+            <p class="mb-0">
+                &copy; {{ currentYear }} <strong>Vanyora Naturals</strong>. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>

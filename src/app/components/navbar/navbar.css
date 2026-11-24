@@ -1,0 +1,168 @@
+/* =========================================
+   Top Banner
+   ========================================= */
+.banner {
+  background: linear-gradient(90deg, var(--primary-green) 0%, #2f7d3f 50%, var(--primary-green) 100%);
+  color: var(--white);
+  padding: 8px 15px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--accent-green);
+}
+
+.banner-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.banner-text strong {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+/* =========================================
+   Navigation Bar
+   ========================================= */
+.custom-navbar {
+  background-color: var(--white);
+  box-shadow: 0 4px 12px rgba(36, 101, 50, 0.08);
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+/* Logo Styling */
+.log .navbar-brand {
+  line-height: 1.05;
+  padding: 0;
+}
+
+.log .brand-main {
+  font-family: var(--font-primary);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  letter-spacing: 0.5px;
+}
+
+.log .brand-sub {
+  font-family: var(--font-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 2px;
+}
+
+/* Nav Menu Links */
+.nav-menu .nav-link {
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 12px !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  bottom: 2px;
+  width: 0;
+  height: 2.5px;
+  background-color: var(--accent-green);
+  transition: width 0.3s ease;
+}
+
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link.active {
+  color: var(--accent-green);
+}
+
+.nav-menu .nav-link:hover::after,
+.nav-menu .nav-link.active::after {
+  width: calc(100% - 24px);
+}
+
+/* Mobile Hamburger Button */
+.custom-navbar .navbar-toggler {
+  border: 2px solid var(--primary-green);
+  padding: 5px 9px;
+}
+
+.custom-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(125, 194, 66, 0.4);
+}
+
+/* =========================================
+   Media Queries (Smooth Scale Down)
+   ========================================= */
+
+/* Tablets (991px and below) */
+@media (max-width: 991px) {
+  .log .brand-main {
+    font-size: 1.65rem;
+  }
+
+  .nav-menu {
+    background-color: var(--soft-green-bg);
+    border-top: 2px solid var(--accent-green);
+    border-radius: 0 0 8px 8px;
+    margin-top: 12px;
+    padding: 10px 14px;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 0.92rem;
+    padding: 10px 12px !important;
+    border-bottom: 1px solid rgba(36, 101, 50, 0.1);
+  }
+
+  .nav-menu .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+
+  .nav-menu .nav-link::after {
+    display: none;
+  }
+
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 6px;
+  }
+}
+
+/* Mobile Devices (575px and below) */
+@media (max-width: 575px) {
+  .banner {
+    padding: 6px 10px;
+  }
+
+  .banner-text {
+    font-size: 0.78rem;
+  }
+
+  .custom-navbar {
+    padding: 10px 0;
+  }
+
+  .log .brand-main {
+    font-size: 1.45rem;
+  }
+
+  .log .brand-sub {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 0.88rem;
+    text-align: center;
+  }
+}

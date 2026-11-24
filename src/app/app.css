@@ -1,0 +1,75 @@
+/* =========================================
+   App Shell Layout (Sticky Footer)
+   ========================================= */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--soft-green-bg);
+}
+
+/* =========================================
+   Main Content Container
+   ========================================= */
+.main-container {
+  flex: 1 0 auto; /* Pushes footer to the bottom on short pages */
+  color: var(--black);
+  font-family: var(--font-secondary);
+  /* padding: 40px 0; */
+  margin-inline: max(20px, 4vw); /* Minimum 20px side margin, scales on wider screens */
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Optional subtle top glow connecting navbar to content */
+.main-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(125, 194, 66, 0.35) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* =========================================
+   Media Queries for All Devices
+   ========================================= */
+
+/* Extra Large Desktops (1200px and up) */
+@media (min-width: 1200px) {
+  .main-container {
+    /* padding: 50px 0; */
+    margin-inline: max(60px, 6vw);
+  }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) {
+  .main-container {
+    /* padding: 32px 0; */
+    margin-inline: 28px;
+  }
+}
+
+/* Large Mobile (576px to 767px) */
+@media (max-width: 767px) {
+  .main-container {
+    /* padding: 24px 0; */
+    margin-inline: 20px;
+  }
+}
+
+/* Small Mobile (575px and below) */
+@media (max-width: 575px) {
+  .main-container {
+    /* padding: 18px 0; */
+    margin-inline: 16px; /* Minimum side margin on small phones */
+  }
+}
